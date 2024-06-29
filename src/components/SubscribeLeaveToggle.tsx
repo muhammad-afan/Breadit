@@ -3,7 +3,7 @@
 import { FC, startTransition } from "react";
 import { Button } from "./ui/Button";
 import { useMutation } from "@tanstack/react-query";
-import { SubscribeToSubredditPayload } from "@/lib/subreddit";
+import { SubscribeToSubredditPayload } from "@/lib/validators/subreddit";
 import axios, { AxiosError } from "axios";
 import { useCustomToast } from "@/hooks/use-custom-toast";
 import { toast } from "@/hooks/use-toast";
