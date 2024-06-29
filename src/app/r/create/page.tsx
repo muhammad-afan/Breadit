@@ -1,6 +1,6 @@
 "use client";
 
-import { CreateSubredditPayload } from "@/lib/subreddit";
+import { CreateSubredditPayload } from "@/lib/validators/subreddit";
 import { useMutation } from "@tanstack/react-query";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
