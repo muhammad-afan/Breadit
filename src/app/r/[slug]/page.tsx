@@ -3,6 +3,7 @@ import { getAuthSession } from "@/lib/auth";
 import { notFound } from "next/navigation";
 import { db } from "@/lib/db";
 import MiniCreatePost from "@/components/MiniCreatePost";
+import PostFeed from "@/components/PostFeed";
 
 interface PageProps {
   params: {
@@ -39,6 +40,8 @@ const Page = async ({ params }: PageProps) => {
       <MiniCreatePost session={session} />
 
       {/* //TODO: Show Posts in user feed */}
+
+      <PostFeed initialPost={subreddit.posts} subredditName={subreddit.name} />
     </>
   );
 };
