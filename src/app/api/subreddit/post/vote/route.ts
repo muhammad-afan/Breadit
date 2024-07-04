@@ -71,7 +71,7 @@ export async function PATCH(req: Request) {
       if (votesAmt >= CACHE_AFTER_UPVOTES) {
         const cachePayload: CachedPost = {
           authorUsername: post.author.username ?? "",
-          constent: JSON.stringify(post.content),
+          content: JSON.stringify(post.content),
           id: post.id,
           title: post.title,
           currentVote: voteType,
@@ -100,7 +100,7 @@ export async function PATCH(req: Request) {
     if (votesAmt >= CACHE_AFTER_UPVOTES) {
       const cachePayload: CachedPost = {
         authorUsername: post.author.username ?? "",
-        constent: JSON.stringify(post.content),
+        content: JSON.stringify(post.content),
         id: post.id,
         title: post.title,
         currentVote: voteType,
