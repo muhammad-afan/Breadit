@@ -4,7 +4,7 @@ export type CachedPost = {
   id: string;
   title: string;
   authorUsername: string;
-  constent: string;
+  content: string;
   currentVote: VoteType | null;
   createdAt: Date;
 };
