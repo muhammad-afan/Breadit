@@ -79,17 +79,30 @@ export async function GET(req: Request) {
     }
   } else {
     try {
-      const { limit, page } = z
+      const { limit, page, subredditName } = z
         .object({
           limit: z.string(),
           page: z.string(),
+          subredditName: z.string().nullish().optional(),
         })
         .parse({
           limit: url.searchParams.get("limit"),
           page: url.searchParams.get("page"),
+          subredditName: url.searchParams.get("subredditName"),
         });
 
+      let whereClause = {};
+
+      if (subredditName) {
+        whereClause = {
+          subreddit: {
+            name: subredditName,
+          },
+        };
+      }
+
       const posts = await db.post.findMany({
+        where: whereClause,
         take: parseInt(limit),
         skip: (parseInt(page) - 1) * parseInt(limit),
         orderBy: {
