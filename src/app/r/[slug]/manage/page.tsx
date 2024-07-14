@@ -13,7 +13,14 @@ const Page = async ({ params }: PageProps) => {
   const { slug } = params;
 
   const session = await getAuthSession();
-  if (!session?.user) return notFound();
+  const isAdmin = await db.subreddit.findFirst({
+    where: {
+      creatorId: session?.user.id,
+      name: slug,
+    },
+  });
+
+  if (!isAdmin || !session?.user) return notFound();
 
   const users = await db.subscription.findMany({
     where: {
