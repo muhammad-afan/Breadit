@@ -67,7 +67,7 @@ const Layout = async ({
                 {subreddit.creatorId === session?.user.id ? (
                   <Link
                     href={`/r/${subreddit.name}/manage`}
-                    className="hover:underline text-blue-600"
+                    className="underline"
                   >
                     r/{subreddit.name}
                   </Link>
