@@ -9,8 +9,8 @@ export default function Component() {
           404 - Page Not Found
         </h1>
         <p className="mt-4 text-muted-foreground">
-          Oops, it looks like the page you're looking for doesn't exist. Let's
-          get you back on track.
+          Oops, it looks like the page you&apos;re looking for doesn&apos;t
+          exist. Let&apos;s get you back on track.
         </p>
         <div className="mt-6">
           <Link
